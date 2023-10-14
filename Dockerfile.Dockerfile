@@ -3,10 +3,10 @@ FROM python:3.8-slim
 
 WORKDIR /app
 
-RUN pip install flask
+COPY ./US /app
 
-COPY ./FS /app
+RUN pip install -r requirements.txt
 
-EXPOSE 9090
+EXPOSE 8080
 
-CMD ["python", "fsserver.py"]
+CMD ["python", "usserver.py"]
